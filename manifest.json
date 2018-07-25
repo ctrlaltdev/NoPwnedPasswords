@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  
+	"name": "No Pwned Passwords",
+	"short_name": "NoPwnedPasswords",
+	"description": "Checks password hashes against Have I Been Pwned and displays a notification if the hash has been leaked in a breach.",
+	"version": "1.0.0",
+
+  "author": "Yorick <yorick@ctrlaltdev.xyz>",
+  "developer": {
+    "name": "Yorick",
+    "url": "https://ctrlaltdev.xyz"
+  },
+	
+	"icons": {
+		"16": "icons/npp.png",
+		"32": "icons/npp@2x.png",
+		"48": "icons/npp@3x.png",
+		"64": "icons/npp@4x.png",
+		"96": "icons/npp@6x.png",
+		"128": "icons/npp@8x.png",
+		"256": "icons/npp@16x.png",
+		"512": "icons/npp@32x.png"
+	},
+
+	"permissions": [
+		"notifications",
+		"https://api.pwnedpasswords.com/"
+	],
+	
+	"content_scripts": [
+	{
+		"matches": ["*://*/*"],
+		"js": ["nopwnedpass.js"],
+		"run_at": "document_end"
+	}]
+}
