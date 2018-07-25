@@ -24,7 +24,6 @@
 	},
 
 	"permissions": [
-		"notifications",
 		"https://api.pwnedpasswords.com/"
 	],
 	
